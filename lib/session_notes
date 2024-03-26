@@ -1,0 +1,44 @@
+API : a link , when i call it, i could (get-post-update-delete) the data from
+the data base which is hosted on a server.
+
+API : is separated into to parts
+
+1- Domain / Host / BaseURL : https://newsapi.org (اساسي+ ثابت)
+2- End point : /v2/everything (اساسي+ متغير)
+3- query params : ?q=tesla&from=2024-02-25&sortBy=publishedAt&apiKey=7c07f0c86d484b30a5af1289c531cff1 (غير اساسي+ متغير)
+
+q : "",
+from: date,
+sortBy: "",
+apiKey: ""
+
+{
+"ans": "KSA",
+"score":1
+}
+
+- the response that comes from api is on the form of JSON object (java script object notation) (Map)
+- JSON object ----> Dart object (Model)
+
+how to fetch data from API ?
+1- make a model : to transfeer json object to a Dart object (to make a Model)
+
+2- make a repository: call API to get the response.
+
+3- Handle the proccess using state management
+
+//////////////////
+
+Cubit
+
+- cubit is a state management method (set state)
+- setstate renders the whole screen , cubit renders the part that i want to render only.
+- cubit used to separate buisness logic from the ui
+- cubit is a Archtictural patteren used to make clean code and clean archticture , How?
+  by preventing the presentation layer to connect with the data layer directly.
+
+how to use :
+1- create the cubit and the state (you can use the extension which is name is bloc)
+2- add a provider for the cubit (register the cubit/bloc)
+3- handle the logic inside bloc/cubit and state
+4- wrap the rendered part with BlocBuilder()
